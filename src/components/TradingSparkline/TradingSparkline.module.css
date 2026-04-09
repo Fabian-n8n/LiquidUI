@@ -1,0 +1,27 @@
+.wrapper {
+  width: 64px;
+  height: 28px;
+  border-radius: var(--liquid-radius-sparkline);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 0 3px;
+  box-sizing: border-box;
+  flex-shrink: 0;
+}
+
+.up {
+  background-color: rgba(0, 204, 136, 0.07);
+}
+
+.down {
+  background-color: rgba(255, 77, 106, 0.07);
+}
+
+.up .bar {
+  fill: var(--liquid-color-up);
+}
+
+.down .bar {
+  fill: var(--liquid-color-down);
+}

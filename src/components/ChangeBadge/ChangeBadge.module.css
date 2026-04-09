@@ -1,0 +1,20 @@
+.badge {
+  display: inline-block;
+  padding: 3px 7px;
+  border-radius: var(--liquid-radius-badge);
+  font-family: var(--liquid-font-family-primary);
+  font-size: var(--liquid-font-size-change-badge);
+  font-weight: var(--liquid-font-weight-medium);
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.up {
+  background-color: var(--liquid-color-up-bg);
+  color: var(--liquid-color-up);
+}
+
+.down {
+  background-color: var(--liquid-color-down-bg);
+  color: var(--liquid-color-down);
+}

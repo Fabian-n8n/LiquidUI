@@ -1,0 +1,105 @@
+.row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: var(--liquid-spacing-3);
+  padding: var(--liquid-spacing-row-y) var(--liquid-spacing-row-x);
+  background-color: var(--liquid-color-bg-base);
+  width: 390px;
+  box-sizing: border-box;
+  border-bottom: 1px solid rgba(28, 28, 33, 0.6);
+  min-height: 64px;
+}
+
+/* Token icon circle */
+.icon {
+  width: 42px;
+  height: 42px;
+  border-radius: var(--liquid-radius-row-icon);
+  background-color: var(--liquid-color-bg-surface);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.iconText {
+  font-family: var(--liquid-font-family-primary);
+  font-size: 9px;
+  font-weight: var(--liquid-font-weight-bold);
+  color: var(--liquid-color-text-primary);
+  text-transform: uppercase;
+  letter-spacing: 0;
+}
+
+/* Name group */
+.nameGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  flex-shrink: 0;
+}
+
+.ticker {
+  font-family: var(--liquid-font-family-primary);
+  font-size: var(--liquid-font-size-asset-ticker);
+  font-weight: var(--liquid-font-weight-semibold);
+  color: var(--liquid-color-text-primary);
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+
+.name {
+  font-family: var(--liquid-font-family-primary);
+  font-size: var(--liquid-font-size-asset-name);
+  font-weight: var(--liquid-font-weight-regular);
+  color: var(--liquid-color-text-secondary);
+  line-height: 1.2;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 80px;
+}
+
+/* Spacer */
+.spacer {
+  flex: 1;
+}
+
+/* Price group */
+.priceGroup {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.price {
+  font-family: var(--liquid-font-family-primary);
+  font-size: var(--liquid-font-size-asset-price);
+  font-weight: var(--liquid-font-weight-semibold);
+  color: var(--liquid-color-text-primary);
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+/* Trade button */
+.tradeBtn {
+  width: 52px;
+  height: 30px;
+  border-radius: var(--liquid-radius-trade-btn);
+  background-color: var(--liquid-color-cta-primary);
+  color: var(--liquid-color-cta-primary-text);
+  font-family: var(--liquid-font-family-primary);
+  font-size: var(--liquid-font-size-trade-btn);
+  font-weight: var(--liquid-font-weight-semibold);
+  border: none;
+  cursor: pointer;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.tradeBtn:active {
+  background-color: #d8d8da;
+}

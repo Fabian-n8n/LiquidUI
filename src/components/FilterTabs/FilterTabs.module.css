@@ -1,0 +1,48 @@
+.row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  padding: 0 var(--liquid-spacing-screen-x);
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  width: 390px;
+  box-sizing: border-box;
+}
+
+.row::-webkit-scrollbar {
+  display: none;
+}
+
+.tab {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 34px;
+  padding: 0 14px;
+  border-radius: var(--liquid-radius-tab);
+  font-family: var(--liquid-font-family-primary);
+  font-size: var(--liquid-font-size-tab-label);
+  font-weight: var(--liquid-font-weight-medium);
+  line-height: 1;
+  border: none;
+  cursor: pointer;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.active {
+  background-color: var(--liquid-color-text-primary);
+  color: var(--liquid-color-bg-base);
+}
+
+.inactive {
+  background-color: var(--liquid-color-bg-surface);
+  color: var(--liquid-color-text-secondary);
+}
+
+.inactive:hover {
+  color: var(--liquid-color-text-primary);
+}

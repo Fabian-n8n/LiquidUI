@@ -1,0 +1,42 @@
+{
+  "spacing": {
+    "1":  { "value": "4px",  "comment": "Base unit" },
+    "2":  { "value": "8px",  "comment": "Component gap small (tab row gap, card gap)" },
+    "3":  { "value": "12px", "comment": "Component gap medium (bottom bar gap)" },
+    "4":  { "value": "16px", "comment": "Screen horizontal padding" },
+    "5":  { "value": "20px", "comment": "Section gap" },
+    "6":  { "value": "24px", "comment": "Section gap large" },
+    "screen-x":    { "value": "16px",  "comment": "Edge to content padding" },
+    "cards-gap":   { "value": "16px",  "comment": "Trending card gap" },
+    "section-y":   { "value": "20px",  "comment": "Gap above section header" },
+    "status-bar":  { "value": "47px",  "comment": "iPhone 13/14 notch area" },
+    "screen-w":    { "value": "390px", "comment": "iPhone 14/15 frame width" },
+    "screen-h":    { "value": "844px", "comment": "iPhone 14/15 frame height" }
+  },
+  "radius": {
+    "card":        { "value": "32px", "comment": "Trending cards, surface cards — squircle-style" },
+    "tab":         { "value": "32px", "comment": "Filter tab pills" },
+    "cta":         { "value": "48px", "comment": "Continue / Get Stocks CTA pill" },
+    "input":       { "value": "99px", "comment": "Phone input field — full pill" },
+    "google-btn":  { "value": "32px", "comment": "Continue with Google button" },
+    "search-btn":  { "value": "32px", "comment": "Search button in bottom bar" },
+    "buysell-btn": { "value": "32px", "comment": "Buy/Sell CTA pill" },
+    "action-btn":  { "value": "32px", "comment": "Add Funds / Withdraw ghost buttons" },
+    "badge":       { "value": "999px","comment": "Change badge pill" },
+    "avatar":      { "value": "50%",  "comment": "User avatar circle" },
+    "coin-icon":   { "value": "12px", "comment": "Coin icon in trending card" }
+  },
+  "size": {
+    "trending-card-w": { "value": "160px", "comment": "Trending card width" },
+    "trending-card-h": { "value": "188px", "comment": "Trending card height" },
+    "bottom-bar-h":    { "value": "56px",  "comment": "Bottom action bar height" },
+    "bottom-bar-w":    { "value": "352px", "comment": "Bottom action bar total width" },
+    "search-btn-w":    { "value": "56px",  "comment": "Search button width" },
+    "search-btn-h":    { "value": "55px",  "comment": "Search button height" },
+    "buysell-btn-w":   { "value": "284px", "comment": "Buy/Sell button width" },
+    "avatar":          { "value": "44px",  "comment": "Avatar circle diameter" },
+    "action-btn-w":    { "value": "176px", "comment": "Add Funds / Withdraw width" },
+    "action-btn-h":    { "value": "48px",  "comment": "Add Funds / Withdraw height" },
+    "cta-h":           { "value": "56px",  "comment": "Primary CTA height" }
+  }
+}

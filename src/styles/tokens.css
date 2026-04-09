@@ -1,0 +1,80 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --liquid-color-bg-base: #121214; /** Page background — warm near-black, Figma Dev Handover April 2026 */
+  --liquid-color-bg-surface: #1c191f; /** Cards, inputs, trending cards */
+  --liquid-color-bg-elevated: #252530; /** Hover states, tooltips */
+  --liquid-color-bg-sheet: #1f1f1f; /** Sign Up full-screen bg */
+  --liquid-color-bg-input: #1c191f; /** Phone input field */
+  --liquid-color-text-primary: #ffffff; /** Headlines, tickers, prices */
+  --liquid-color-text-secondary: #a5a0ab; /** Warm gray — inactive tabs, subtitles, View all */
+  --liquid-color-text-muted: #767575; /** Placeholders, OR divider */
+  --liquid-color-text-subtitle: #acabaa; /** Phone auth body copy */
+  --liquid-color-text-fineprint: #57505e; /** Terms of service */
+  --liquid-color-up: #00CC88; /** Positive % change, upward sparklines */
+  --liquid-color-down: #FF4D6A; /** Negative % change, downward sparklines */
+  --liquid-color-cta-primary: #ffffff; /** Primary CTA buttons */
+  --liquid-color-cta-primary-text: #000000; /** Text on primary CTA */
+  --liquid-color-cta-gradient-end: #d4d4d4; /** Continue button gradient end */
+  --liquid-color-border-input: #2b282e; /** Input borders, ghost button stroke */
+  --liquid-color-border-subtle: rgba(255,255,255,0.05); /** Row dividers */
+  --liquid-color-google-btn-bg: #121214; /** Continue with Google bg */
+  --liquid-color-google-btn-text: #e7e7e7; /** Continue with Google text */
+  --liquid-spacing-1: 4px; /** Base unit */
+  --liquid-spacing-2: 8px; /** Component gap small (tab row gap, card gap) */
+  --liquid-spacing-3: 12px; /** Component gap medium (bottom bar gap) */
+  --liquid-spacing-4: 16px; /** Screen horizontal padding */
+  --liquid-spacing-5: 20px; /** Section gap */
+  --liquid-spacing-6: 24px; /** Section gap large */
+  --liquid-spacing-screen-x: 16px; /** Edge to content padding */
+  --liquid-spacing-cards-gap: 16px; /** Trending card gap */
+  --liquid-spacing-section-y: 20px; /** Gap above section header */
+  --liquid-spacing-status-bar: 47px; /** iPhone 13/14 notch area */
+  --liquid-spacing-screen-w: 390px; /** iPhone 14/15 frame width */
+  --liquid-spacing-screen-h: 844px; /** iPhone 14/15 frame height */
+  --liquid-radius-card: 32px; /** Trending cards, surface cards — squircle-style */
+  --liquid-radius-tab: 32px; /** Filter tab pills */
+  --liquid-radius-cta: 48px; /** Continue / Get Stocks CTA pill */
+  --liquid-radius-input: 99px; /** Phone input field — full pill */
+  --liquid-radius-google-btn: 32px; /** Continue with Google button */
+  --liquid-radius-search-btn: 32px; /** Search button in bottom bar */
+  --liquid-radius-buysell-btn: 32px; /** Buy/Sell CTA pill */
+  --liquid-radius-action-btn: 32px; /** Add Funds / Withdraw ghost buttons */
+  --liquid-radius-badge: 999px; /** Change badge pill */
+  --liquid-radius-avatar: 50%; /** User avatar circle */
+  --liquid-radius-coin-icon: 12px; /** Coin icon in trending card */
+  --liquid-size-trending-card-w: 160px; /** Trending card width */
+  --liquid-size-trending-card-h: 188px; /** Trending card height */
+  --liquid-size-bottom-bar-h: 56px; /** Bottom action bar height */
+  --liquid-size-bottom-bar-w: 352px; /** Bottom action bar total width */
+  --liquid-size-search-btn-w: 56px; /** Search button width */
+  --liquid-size-search-btn-h: 55px; /** Search button height */
+  --liquid-size-buysell-btn-w: 284px; /** Buy/Sell button width */
+  --liquid-size-avatar: 44px; /** Avatar circle diameter */
+  --liquid-size-action-btn-w: 176px; /** Add Funds / Withdraw width */
+  --liquid-size-action-btn-h: 48px; /** Add Funds / Withdraw height */
+  --liquid-size-cta-h: 56px; /** Primary CTA height */
+  --liquid-font-family-primary: 'Saans', 'Inter', sans-serif; /** Brand font — Saans variable, fallback Inter */
+  --liquid-font-size-brand-logo: 24px; /** 'Liquid' wordmark nav */
+  --liquid-font-size-phone-auth-h1: 36px; /** Phone auth heading — Enter your phone number */
+  --liquid-font-size-section-header: 20px; /** Trending Now, Market Assets section labels */
+  --liquid-font-size-signup-headline: 24px; /** 2 Free Tesla Stocks */
+  --liquid-font-size-tab-label: 16px; /** Filter tab pills — larger than typical mobile */
+  --liquid-font-size-body: 16px; /** Phone auth subtitle, action button labels */
+  --liquid-font-size-cta: 14px; /** All CTA buttons — Continue, Get Stocks, Buy/Sell */
+  --liquid-font-size-view-all: 14px; /** Section View all links */
+  --liquid-font-size-signup-kicker: 10px; /** GET STARTED WITH LIQUID — uppercase kicker */
+  --liquid-font-size-signup-subtitle: 14px; /** Create your account... */
+  --liquid-font-size-input-placeholder: 18px; /** Phone number placeholder */
+  --liquid-font-size-fineprint: 11px; /** Terms of service fine print */
+  --liquid-font-size-or-divider: 18px; /** OR between auth options */
+  --liquid-font-size-asset-price: 14px; /** Asset list price */
+  --liquid-font-size-asset-name: 12px; /** Asset full name (secondary) */
+  --liquid-font-size-change-badge: 13px; /** % change in trending card */
+  --liquid-font-weight-regular: 400; /** Saans 380 → CSS 400 */
+  --liquid-font-weight-semibold: 600; /** Saans 570 → CSS 600 */
+  --liquid-font-weight-bold: 700; /** Saans 670 → CSS 700 */
+  --liquid-font-weight-heavy: 800; /** Saans 790 → CSS 800 — nav logo, headlines, Market Assets */
+}

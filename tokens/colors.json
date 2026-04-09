@@ -1,0 +1,33 @@
+{
+  "color": {
+    "bg": {
+      "base":     { "value": "#121214", "attributes": { "category": "color" }, "comment": "Page background — warm near-black, Figma Dev Handover April 2026" },
+      "surface":  { "value": "#1c191f", "attributes": { "category": "color" }, "comment": "Cards, inputs, trending cards" },
+      "elevated": { "value": "#252530", "attributes": { "category": "color" }, "comment": "Hover states, tooltips" },
+      "sheet":    { "value": "#1f1f1f", "attributes": { "category": "color" }, "comment": "Sign Up full-screen bg" },
+      "input":    { "value": "#1c191f", "attributes": { "category": "color" }, "comment": "Phone input field" }
+    },
+    "text": {
+      "primary":   { "value": "#ffffff", "attributes": { "category": "color" }, "comment": "Headlines, tickers, prices" },
+      "secondary": { "value": "#a5a0ab", "attributes": { "category": "color" }, "comment": "Warm gray — inactive tabs, subtitles, View all" },
+      "muted":     { "value": "#767575", "attributes": { "category": "color" }, "comment": "Placeholders, OR divider" },
+      "subtitle":  { "value": "#acabaa", "attributes": { "category": "color" }, "comment": "Phone auth body copy" },
+      "fineprint": { "value": "#57505e", "attributes": { "category": "color" }, "comment": "Terms of service" }
+    },
+    "up":   { "value": "#00CC88", "attributes": { "category": "color" }, "comment": "Positive % change, upward sparklines" },
+    "down": { "value": "#FF4D6A", "attributes": { "category": "color" }, "comment": "Negative % change, downward sparklines" },
+    "cta": {
+      "primary":      { "value": "#ffffff", "attributes": { "category": "color" }, "comment": "Primary CTA buttons" },
+      "primary-text": { "value": "#000000", "attributes": { "category": "color" }, "comment": "Text on primary CTA" },
+      "gradient-end": { "value": "#d4d4d4", "attributes": { "category": "color" }, "comment": "Continue button gradient end" }
+    },
+    "border": {
+      "input":  { "value": "#2b282e", "attributes": { "category": "color" }, "comment": "Input borders, ghost button stroke" },
+      "subtle": { "value": "rgba(255,255,255,0.05)", "attributes": { "category": "color" }, "comment": "Row dividers" }
+    },
+    "google-btn": {
+      "bg":   { "value": "#121214", "attributes": { "category": "color" }, "comment": "Continue with Google bg" },
+      "text": { "value": "#e7e7e7", "attributes": { "category": "color" }, "comment": "Continue with Google text" }
+    }
+  }
+}

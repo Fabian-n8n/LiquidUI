@@ -1,0 +1,31 @@
+{
+  "font": {
+    "family": {
+      "primary": { "value": "'Saans', 'Inter', sans-serif", "comment": "Brand font — Saans variable, fallback Inter" }
+    },
+    "size": {
+      "brand-logo":       { "value": "24px", "comment": "'Liquid' wordmark nav" },
+      "phone-auth-h1":    { "value": "36px", "comment": "Phone auth heading — Enter your phone number" },
+      "section-header":   { "value": "20px", "comment": "Trending Now, Market Assets section labels" },
+      "signup-headline":  { "value": "24px", "comment": "2 Free Tesla Stocks" },
+      "tab-label":        { "value": "16px", "comment": "Filter tab pills — larger than typical mobile" },
+      "body":             { "value": "16px", "comment": "Phone auth subtitle, action button labels" },
+      "cta":              { "value": "14px", "comment": "All CTA buttons — Continue, Get Stocks, Buy/Sell" },
+      "view-all":         { "value": "14px", "comment": "Section View all links" },
+      "signup-kicker":    { "value": "10px", "comment": "GET STARTED WITH LIQUID — uppercase kicker" },
+      "signup-subtitle":  { "value": "14px", "comment": "Create your account..." },
+      "input-placeholder":{ "value": "18px", "comment": "Phone number placeholder" },
+      "fineprint":        { "value": "11px", "comment": "Terms of service fine print" },
+      "or-divider":       { "value": "18px", "comment": "OR between auth options" },
+      "asset-price":      { "value": "14px", "comment": "Asset list price" },
+      "asset-name":       { "value": "12px", "comment": "Asset full name (secondary)" },
+      "change-badge":     { "value": "13px", "comment": "% change in trending card" }
+    },
+    "weight": {
+      "regular":  { "value": "400", "comment": "Saans 380 → CSS 400" },
+      "semibold": { "value": "600", "comment": "Saans 570 → CSS 600" },
+      "bold":     { "value": "700", "comment": "Saans 670 → CSS 700" },
+      "heavy":    { "value": "800", "comment": "Saans 790 → CSS 800 — nav logo, headlines, Market Assets" }
+    }
+  }
+}

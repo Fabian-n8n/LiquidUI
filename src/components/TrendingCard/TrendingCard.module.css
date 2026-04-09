@@ -1,0 +1,102 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 160px;
+  flex-shrink: 0;
+  background-color: var(--liquid-color-bg-surface);
+  border-radius: var(--liquid-radius-card);
+  padding: 14px 12px;
+  box-sizing: border-box;
+}
+
+.topRow {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 10px;
+  background-color: var(--liquid-color-bg-elevated);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.iconText {
+  font-family: var(--liquid-font-family-primary);
+  font-size: 7px;
+  font-weight: var(--liquid-font-weight-bold);
+  color: var(--liquid-color-text-primary);
+  text-transform: uppercase;
+}
+
+.tickerGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+  min-width: 0;
+}
+
+.ticker {
+  font-family: var(--liquid-font-family-primary);
+  font-size: 13px;
+  font-weight: var(--liquid-font-weight-semibold);
+  color: var(--liquid-color-text-primary);
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+
+.name {
+  font-family: var(--liquid-font-family-primary);
+  font-size: 11px;
+  color: var(--liquid-color-text-secondary);
+  line-height: 1.2;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.sparklineRow {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.bottomRow {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.price {
+  font-family: var(--liquid-font-family-primary);
+  font-size: 13px;
+  font-weight: var(--liquid-font-weight-semibold);
+  color: var(--liquid-color-text-primary);
+  line-height: 1.2;
+}
+
+.tradeBtn {
+  height: 26px;
+  padding: 0 10px;
+  border-radius: 7px;
+  background-color: var(--liquid-color-cta-primary);
+  color: var(--liquid-color-cta-primary-text);
+  font-family: var(--liquid-font-family-primary);
+  font-size: 11px;
+  font-weight: var(--liquid-font-weight-semibold);
+  border: none;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.tradeBtn:active {
+  background-color: #d8d8da;
+}

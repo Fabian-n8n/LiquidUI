@@ -1,0 +1,151 @@
+import { Meta } from '@storybook/blocks';
+
+<Meta title="Liquid / Introduction" />
+
+<div style={{ fontFamily: "'Saans', 'Inter', sans-serif", maxWidth: 720, margin: '0 auto', padding: '48px 0', color: '#F2F2F4' }}>
+
+# Liquid Design System
+
+**Dark-first trading interface for crypto and multi-asset markets.**
+Built for the AnythingDesign Assessment — April 2026.
+
+---
+
+## Overview
+
+Liquid is a precision-crafted mobile trading app designed for clarity under pressure. The visual language draws from professional terminals (Bloomberg, TradingView) while staying native to iOS — restrained, data-dense, and thumb-friendly.
+
+> Signal over noise. Price, change, and trend are the stars. Everything else is scaffolding.
+
+---
+
+## Color Tokens
+
+All values extracted directly from Figma Dev Handover, April 2026.
+
+### Surfaces
+| Token | Hex | Usage |
+|---|---|---|
+| `bg-base` | `#121214` | Page background — warm near-black (NOT `#000` or `#0C0C0E`) |
+| `bg-surface` | `#1c191f` | Cards, inputs, trending cards |
+| `bg-elevated` | `#252530` | Hover / pressed states |
+| `bg-sheet` | `#1f1f1f` | Sign Up full-screen |
+
+### Text
+| Token | Hex | Usage |
+|---|---|---|
+| `text-primary` | `#ffffff` | Headlines, tickers, prices |
+| `text-secondary` | `#a5a0ab` | Warm gray — inactive tabs, subtitles, View all |
+| `text-muted` | `#767575` | Placeholders, OR divider |
+| `text-subtitle` | `#acabaa` | Phone auth body copy |
+| `text-fineprint` | `#57505e` | Terms of service |
+
+### Semantic (Trading)
+| Token | Hex | Usage |
+|---|---|---|
+| `color-up` | `#00CC88` | Positive change, upward sparklines |
+| `color-down` | `#FF4D6A` | Negative change, downward sparklines |
+
+**Rule:** Green and red are reserved exclusively for market direction. No other semantic color exists.
+
+### Interactive
+| Token | Hex | Usage |
+|---|---|---|
+| `cta-primary` | `#ffffff` | All primary CTA buttons |
+| `cta-primary-text` | `#000000` | Text on primary CTA |
+| `cta-gradient` | `#fff → #d4d4d4` | Continue / Get Stocks gradient |
+| `border-input` | `#2b282e` | Input borders, ghost button stroke |
+
+---
+
+## Typography
+
+**Font:** Saans (brand variable) · Fallback: Inter
+
+Saans weight scale → CSS: 380→400, 570→600, 670→700, 790→800
+
+| Role | Size | Weight | Color |
+|---|---|---|---|
+| Brand Logo / Nav | 24px | 800 | `text-primary` |
+| Phone Auth H1 | 36px | 800 | `text-primary` |
+| Sign Up Headline | 24px | 800 | `text-primary` |
+| Section Header | 20px | 600–800 | `text-primary` |
+| Filter Tab (active) | 16px | 600 | `#121214` on white pill |
+| Filter Tab (inactive) | 16px | 400 | `text-secondary` |
+| Body / Subtitle | 16px | 400 | `text-subtitle` |
+| CTA Text | 14px | 700 | `cta-primary-text` — uppercase |
+| Input Placeholder | 18px | 400 | `text-muted` |
+| Fine Print | 11px | 400 | `#57505e` |
+
+---
+
+## Spacing System
+
+**Base unit:** 4px · **Screen width:** 390px (iPhone 14/15) · **Screen padding:** 16px
+
+| Role | Value |
+|---|---|
+| Screen horizontal padding | 16px |
+| Cards gap | 16px |
+| Tab row gap | 8px |
+| Bottom bar gap (Search → Buy/Sell) | 12px |
+| Status bar height | 47px |
+
+---
+
+## Border Radius
+
+| Component | Radius | Note |
+|---|---|---|
+| Trending cards | `32px` | Squircle-style — premium rounded |
+| Filter tabs | `32px` | Pill rows |
+| Buy/Sell, Search, action buttons | `32px` | Bottom bar |
+| Primary CTA (Continue, Get Stocks) | `48px` | More pill |
+| Phone input | `99px` | Full pill |
+
+---
+
+## Elevation Model
+
+No `box-shadow`. Depth is communicated purely through background color.
+
+| Level | Color | Used for |
+|---|---|---|
+| L0 — Ground | `#121214` | Page background |
+| L1 — Surface | `#1c191f` | Cards, inputs |
+| L2 — Sheet | `#1f1f1f` | Sign Up full-screen |
+
+---
+
+## Screens
+
+| Screen | Story |
+|---|---|
+| New User Markets | `Screens / Markets – New User` |
+| Sign Up Offer | `Screens / Markets Flow → Sign Up Offer` |
+| Phone Auth | `Screens / Markets Flow → Phone Auth` |
+| Existing User | `Screens / Markets Flow → Existing User` |
+
+---
+
+## Components
+
+| Component | Story |
+|---|---|
+| AssetRow | `Liquid / AssetRow` |
+| ChangeBadge | `Liquid / ChangeBadge` |
+| FilterTabs | `Liquid / FilterTabs` |
+| TradingSparkline | `Liquid / TradingSparkline` |
+| TrendingCard | `Liquid / TrendingCard` |
+
+---
+
+## Design Principles
+
+1. **One clear action per zone** — browse → spot → trade. Never ambiguous.
+2. **Status at a glance** — green = up, red = down. No other color carries meaning.
+3. **Thumb-friendly** — all primary actions reachable in the bottom 60% of screen.
+4. **Flat elevation** — no shadows. Surface color is the depth signal.
+5. **Data density** — every pixel earns its place. No decoration for decoration's sake.
+
+</div>

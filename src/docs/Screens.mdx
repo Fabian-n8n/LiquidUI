@@ -1,0 +1,102 @@
+import { Meta } from '@storybook/blocks';
+
+<Meta title="Liquid / Screens" />
+
+<div style={{ fontFamily: "'Saans', 'Inter', sans-serif", maxWidth: 720, margin: '0 auto', padding: '48px 0', color: '#F2F2F4' }}>
+
+# Screens
+
+The Liquid app has two distinct user states with four core screens.
+
+---
+
+## User State: New User
+
+The new user flow is a 3-step funnel: Browse → Offer → Auth.
+
+### 1. New User Markets
+**Story:** `Screens / Markets – New User`
+
+The default state for unauthenticated users. Displays the full market list without portfolio context.
+
+- No portfolio balance section
+- **Trending Now** — horizontal scroll row, 3 cards (BTC, ETH, SOL), 3rd card partially visible to signal scrollability
+- Full asset list with Filter Tabs (All, Watchlist, Gainers, Losers, New…)
+- Bottom action bar with Search + Buy/Sell CTA pill
+- All elements have pointer cursor — clicking anywhere triggers the sign-up flow
+- After 5 seconds (or on tap), automatically advances to the Sign Up screen
+
+### 2. Sign Up Offer
+**Story:** `Screens / Markets Flow → Sign Up Offer`
+
+A full-screen promotional overlay slides up over the markets screen with a spring animation.
+
+- **Animation:** `slideUp` — cubic-bezier(0.22, 1, 0.36, 1) — 420ms spring feel
+- Background: `#1f1f1f` (slightly lighter than page bg)
+- Hero image (Tesla coin) with radial glow aura
+- Two CTAs: **GET MY FREE STOCKS** (primary white gradient pill) and **MAYBE LATER** (text, uppercase)
+- Claim → advances to Phone Auth
+- Later → jumps directly to Existing User (logged in)
+
+### 3. Phone Auth
+**Story:** `Screens / Markets Flow → Phone Auth`
+
+Phone number entry screen with a functional input field.
+
+- Background: `#121214`
+- 36px heavy headline, 16px subtitle in warm gray `#ACABAA` (two lines)
+- Full-pill input (`r=99`): country flag + dial code + **live numeric input field**
+- Input auto-focuses on mount — triggers iOS numeric keypad (`inputMode="numeric"`)
+- Continue button: enabled (white gradient) only when phone number has been entered
+- OR divider → Continue with Google (Google logo inline)
+- Fine print: ToS + Privacy Policy links
+
+---
+
+## User State: Existing User
+
+### 4. Existing User Dashboard
+**Story:** `Screens / Markets Flow → Existing User`
+
+The logged-in home screen. Shows portfolio context above the market list.
+
+- Header: circular avatar (Joshua) + name + notification badge with unread count `2`
+- Portfolio balance: large `$14,048.00` + P&L row (dollar + percent)
+- Add Funds / Withdraw ghost action buttons (stroke only, no fill)
+- **Trending Now** — same 3-card partial scroll row as New User
+- Market Assets list with Filter Tabs
+- Bottom action bar with Buy/Sell CTA
+
+---
+
+## Interaction Flow
+
+```
+New User Markets
+      ↓ (5s or tap anywhere)
+Sign Up Offer  ← slides up with spring animation
+      ↓ "GET MY FREE STOCKS"        ↓ "MAYBE LATER"
+  Phone Auth  ─────────────────────→  Existing User
+      ↓ type number → "CONTINUE"
+  Existing User
+```
+
+Use the `initialScreen` control in the Controls panel to jump to any step directly.
+
+---
+
+## Design System Values (Screens)
+
+| Token | Value | Used in |
+|---|---|---|
+| `bg-base` | `#121214` | All screen backgrounds |
+| `bg-surface` | `#1c191f` | Cards, input fields |
+| `bg-sheet` | `#1f1f1f` | Sign Up screen |
+| `text-secondary` | `#a5a0ab` | Inactive tabs, subtitles |
+| `text-subtitle` | `#acabaa` | Phone auth copy |
+| `cta-gradient` | `#fff → #d4d4d4` | Continue, Get Stocks |
+| `card radius` | `32px` | Trending cards |
+| `cta radius` | `48px` | Primary CTAs |
+| `input radius` | `99px` | Phone input pill |
+
+</div>
