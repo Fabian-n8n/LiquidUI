@@ -978,18 +978,18 @@ function VerifyScreen({ onSuccess }: { onSuccess: () => void }) {
 // ─────────────────────────────────────────────────────────────────────────────
 type Screen = 'markets' | 'signup' | 'phone-auth' | 'verify' | 'existing';
 
-function LiquidFlow({ initialScreen = 'markets' as Screen }) {
+function LiquidFlow({ initialScreen = 'markets' as Screen, disableAutoAdvance = false }: { initialScreen?: Screen; disableAutoAdvance?: boolean }) {
   const [screen, setScreen] = useState<Screen>(initialScreen);
   const [prevScreen, setPrevScreen] = useState<Screen | null>(null);
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  // Auto-advance from markets after 5s
+  // Auto-advance from markets after 5s (disabled in docs mode)
   useEffect(() => {
-    if (screen === 'markets') {
+    if (screen === 'markets' && !disableAutoAdvance) {
       timerRef.current = setTimeout(() => setScreen('signup'), 5000);
     }
     return () => { if (timerRef.current) clearTimeout(timerRef.current); };
-  }, [screen]);
+  }, [screen, disableAutoAdvance]);
 
   const renderScreen = () => {
     switch (screen) {
@@ -1042,6 +1042,15 @@ const meta: Meta<typeof LiquidFlow> = {
   title: 'Screens/Markets Flow',
   component: LiquidFlow,
   tags: ['autodocs'],
+  // Disable auto-advance in docs mode so the Markets screen stays visible
+  decorators: [
+    (Story, context) => {
+      if (context.viewMode === 'docs') {
+        return <LiquidFlow key={context.args.initialScreen as string} {...(context.args as any)} disableAutoAdvance={true} />;
+      }
+      return <Story />;
+    },
+  ],
   // key forces full remount when switching stories — prevents stale useState
   render: (args) => <LiquidFlow key={args.initialScreen} {...args} />,
   parameters: {
