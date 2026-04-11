@@ -20,9 +20,14 @@ const STYLES = `
     from { transform: translateY(100%); opacity: 0.6; }
     to   { transform: translateY(0);    opacity: 1; }
   }
+  @keyframes spin {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+  }
   .fade-in   { animation: fadeIn  0.32s ease forwards; }
   .screen-in { animation: screenIn 0.28s ease forwards; }
   .slide-up  { animation: slideUp 0.42s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
+  .spin      { animation: spin 0.75s linear infinite; }
   * { -webkit-font-smoothing: antialiased; box-sizing: border-box; }
   ::-webkit-scrollbar { display: none; }
 `;
@@ -533,6 +538,7 @@ function SignUpScreen({ onClaim, onLater }: { onClaim: () => void; onLater: () =
 // ─────────────────────────────────────────────────────────────────────────────
 function PhoneAuthScreen({ onContinue }: { onContinue: () => void }) {
   const [phone, setPhone] = React.useState('');
+  const [loading, setLoading] = React.useState(false);
   const inputRef = React.useRef<HTMLInputElement>(null);
 
   // Auto-focus triggers iOS numeric keypad on mount
@@ -540,6 +546,12 @@ function PhoneAuthScreen({ onContinue }: { onContinue: () => void }) {
     const t = setTimeout(() => inputRef.current?.focus(), 120);
     return () => clearTimeout(t);
   }, []);
+
+  const handleContinue = () => {
+    if (!phone.trim() || loading) return;
+    setLoading(true);
+    setTimeout(() => onContinue(), 1200);
+  };
 
   return (
     <div className="screen-in" style={{
@@ -586,8 +598,11 @@ function PhoneAuthScreen({ onContinue }: { onContinue: () => void }) {
           borderRadius: 99,
           border: `1px solid ${T.border}`,
           height: 56, flexShrink: 0, overflow: 'hidden',
-          cursor: 'text',
-        }} onClick={() => inputRef.current?.focus()}>
+          cursor: loading ? 'default' : 'text',
+          opacity: loading ? 0.45 : 1,
+          transition: 'opacity 0.2s ease',
+          pointerEvents: loading ? 'none' : 'auto',
+        }} onClick={() => !loading && inputRef.current?.focus()}>
           {/* Country selector */}
           <div style={{
             display: 'flex', alignItems: 'center', gap: 6,
@@ -624,30 +639,40 @@ function PhoneAuthScreen({ onContinue }: { onContinue: () => void }) {
         {/* Gap to continue */}
         <div style={{ height: 41, flexShrink: 0 }} />
 
-        {/* Continue CTA — enabled only when phone has value */}
+        {/* Continue CTA — enabled when phone has value; shows in-button spinner while loading */}
         <button
           data-testid="continue-btn"
-          onClick={() => { if (phone.trim()) onContinue(); }}
+          onClick={handleContinue}
+          disabled={loading}
           style={{
             width: '100%', height: 56, borderRadius: 48,
-            background: phone.trim()
+            background: loading
               ? 'linear-gradient(180deg, #ffffff 0%, #d4d4d4 100%)'
-              : 'rgba(255,255,255,0.15)',
+              : phone.trim()
+                ? 'linear-gradient(180deg, #ffffff 0%, #d4d4d4 100%)'
+                : 'rgba(255,255,255,0.15)',
             border: 'none',
-            color: phone.trim() ? T.ctaText : 'rgba(255,255,255,0.4)',
+            color: phone.trim() && !loading ? T.ctaText : 'rgba(255,255,255,0.4)',
             fontSize: 14, fontWeight: 700,
             fontFamily: T.font, letterSpacing: '1px',
             textTransform: 'uppercase',
-            cursor: phone.trim() ? 'pointer' : 'default',
+            cursor: loading || !phone.trim() ? 'default' : 'pointer',
             flexShrink: 0,
             transition: 'background 0.2s ease, color 0.2s ease',
+            display: 'flex', alignItems: 'center', justifyContent: 'center',
           }}
         >
-          Continue
+          {loading ? (
+            <div className="spin" style={{
+              width: 22, height: 22, borderRadius: '50%',
+              border: '2.5px solid rgba(0,0,0,0.15)',
+              borderTopColor: 'rgba(0,0,0,0.7)',
+            }} />
+          ) : 'Continue'}
         </button>
 
         {/* OR divider */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: 14, margin: '20px 0 20px', flexShrink: 0 }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 14, margin: '20px 0 20px', flexShrink: 0, opacity: loading ? 0.35 : 1, transition: 'opacity 0.2s ease' }}>
           <div style={{ flex: 1, height: 1, background: 'rgba(255,255,255,0.06)' }} />
           <span style={{ fontSize: 18, fontWeight: 400, color: T.muted, fontFamily: T.font }}>OR</span>
           <div style={{ flex: 1, height: 1, background: 'rgba(255,255,255,0.06)' }} />
@@ -659,7 +684,10 @@ function PhoneAuthScreen({ onContinue }: { onContinue: () => void }) {
           background: T.bg, border: `1px solid ${T.border}`,
           color: '#e7e7e7', fontSize: 14, fontWeight: 600,
           fontFamily: T.font, letterSpacing: '-0.1px',
-          cursor: 'pointer',
+          cursor: loading ? 'default' : 'pointer',
+          opacity: loading ? 0.35 : 1,
+          transition: 'opacity 0.2s ease',
+          pointerEvents: loading ? 'none' : 'auto',
           display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 10,
           flexShrink: 0,
         }}>
@@ -677,6 +705,7 @@ function PhoneAuthScreen({ onContinue }: { onContinue: () => void }) {
           marginTop: 'auto', marginBottom: 22,
           fontSize: 11, fontWeight: 400, color: '#57505e',
           fontFamily: T.font, textAlign: 'center', lineHeight: 1.7,
+          opacity: loading ? 0.35 : 1, transition: 'opacity 0.2s ease',
         }}>
           By continuing, you agree to our{' '}
           <span style={{ color: T.subtitle, textDecoration: 'underline', cursor: 'pointer' }}>Terms of Service</span>
@@ -861,6 +890,7 @@ function ExistingUserScreen({ showToast = false }: { showToast?: boolean }) {
 function VerifyScreen({ onSuccess }: { onSuccess: () => void }) {
   const [digits, setDigits] = React.useState(['', '', '', '']);
   const [done, setDone] = React.useState(false);
+  const [loading, setLoading] = React.useState(false);
   const inputsRef = React.useRef<(HTMLInputElement | null)[]>([]);
 
   // Auto-focus first box
@@ -882,7 +912,8 @@ function VerifyScreen({ onSuccess }: { onSuccess: () => void }) {
     const allFilled = next.every(d => d !== '');
     if (allFilled) {
       setDone(true);
-      setTimeout(() => onSuccess(), 1400);
+      setLoading(true);
+      setTimeout(() => onSuccess(), 1000);
     }
   };
 
@@ -900,6 +931,7 @@ function VerifyScreen({ onSuccess }: { onSuccess: () => void }) {
       width: '100%', height: '100%',
       background: T.bg,
       display: 'flex', flexDirection: 'column',
+      position: 'relative',
     }}>
       <StatusBar />
 
@@ -969,6 +1001,32 @@ function VerifyScreen({ onSuccess }: { onSuccess: () => void }) {
         </div>
 
       </div>
+
+      {/* Loading overlay — shows for 1s after 4th digit */}
+      {loading && (
+        <div style={{
+          position: 'absolute', inset: 0,
+          background: 'rgba(0,0,0,0.72)',
+          display: 'flex', flexDirection: 'column',
+          alignItems: 'center', justifyContent: 'center',
+          gap: 16,
+        }}>
+          {/* Spinner ring */}
+          <div className="spin" style={{
+            width: 52, height: 52,
+            borderRadius: '50%',
+            border: `3px solid rgba(255,255,255,0.12)`,
+            borderTopColor: T.up,
+            flexShrink: 0,
+          }} />
+          <span style={{
+            fontSize: 13, fontWeight: 400, color: T.secondary,
+            fontFamily: T.font, letterSpacing: '-0.1px',
+          }}>
+            Verifying your number…
+          </span>
+        </div>
+      )}
     </div>
   );
 }
